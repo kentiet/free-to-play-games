@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react'
 import './App.css';
 
+import CardList from './components/card-list/card-list.component'
+import ErrorBoundry from './components/ErrorBoundry.component'
+
 function App() {
+
+  const[games, setGames] = useState([])
+
+  useEffect(()=>{
+    fetch('https://cors-anywhere.herokuapp.com/https://freetogame.com/api/games')
+    .then(res => res.json())
+    .then(games => setGames(games))
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ErrorBoundry>
+          <CardList games={games}/>
+      </ErrorBoundry>
     </div>
   );
 }
