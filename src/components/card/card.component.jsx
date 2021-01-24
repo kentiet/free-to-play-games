@@ -15,8 +15,8 @@ import './card.styles.scss'
 
 const Card = ({id, title, thumbnail,short_description, game_url, genre, platform, publisher, developer, release_date}) => (
     <div className="game-card">
-        {genre}
-        {title}
+        <img src={`${thumbnail}`} alt=""/>
+        <p>{title}</p>
     </div>
 )
 

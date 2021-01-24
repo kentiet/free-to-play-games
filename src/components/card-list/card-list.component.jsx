@@ -8,7 +8,10 @@ const CardList = ({games}) => (
         {
             games.map((game, i) => {
                 return (
-                    <Card key={i} title={game.title}/>
+                    <Card 
+                        key={i} 
+                        title={game.title}
+                        thumbnail={game.thumbnail}/>
                 )
             })
         }
