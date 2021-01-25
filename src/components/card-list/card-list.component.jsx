@@ -11,7 +11,11 @@ const CardList = ({games}) => (
                     <Card 
                         key={i} 
                         title={game.title}
-                        thumbnail={game.thumbnail}/>
+                        thumbnail={game.thumbnail}
+                        release_date={game.release_date}
+                        platform={game.platform}
+                        genre={game.genre}
+                        game_url={game.game_url}/>
                 )
             })
         }
