@@ -12,7 +12,7 @@ function App() {
   const[searchField, setSearchField] = useState('')
 
   useEffect(()=>{
-    fetch('https://cors-anywhere.herokuapp.com/https://freetogame.com/api/games')
+    fetch('https://cors.bridged.cc/https://freetogame.com/api/games')
     .then(res => res.json())
     .then(games => setGames(games))
   },[])
