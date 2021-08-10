@@ -13,13 +13,13 @@ function App() {
 
   const fetchData = () => {
     fetch('https://cors.bridged.cc/https://freetogame.com/api/games')
-      .then((res) => {
-        if (res.status === 200) return res.json();
-        else {
+      .then((err, res) => {
+        if (err) {
           const loadData = JSON.stringify(data)
           const json = JSON.parse(loadData)
           return json
         }
+        if (res.status === 200) return res.json();
       })
       .then((games) => setGames(games))
       .catch((err) => {
