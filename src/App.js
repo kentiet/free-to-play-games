@@ -17,6 +17,7 @@ function App() {
         if (err) {
           const loadData = JSON.stringify(data)
           const json = JSON.parse(loadData)
+          console.log(json);
           return json
         }
         if (res.status === 200) return res.json();
